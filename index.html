@@ -40,7 +40,6 @@
     <style>
         body {
             background-color: #fef8ec;
-            /* Motif garis diagonal pastel khas Duda Fan */
             background-image: linear-gradient(45deg, #fdf3da 25%, transparent 25%, transparent 50%, #fdf3da 50%, #fdf3da 75%, transparent 75%, transparent);
             background-size: 40px 40px;
             font-family: 'Balsamiq Sans', cursive;
@@ -51,7 +50,6 @@
             box-shadow: 0 8px 0px rgba(249, 115, 22, 0.04);
         }
         .floating { animation: floating 4s ease-in-out infinite; }
-        .floating-delay { animation: floating 4.5s ease-in-out infinite 1.2s; }
         @keyframes floating {
             0% { transform: translateY(0px) rotate(0deg); }
             50% { transform: translateY(-8px) rotate(2deg); }
@@ -60,7 +58,6 @@
         .terminal-font {
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
         }
-        /* Custom scrollbar matching theme */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -75,7 +72,6 @@
 </head>
 <body class="text-[#7c2d12] min-h-screen relative overflow-x-hidden pb-12 px-4 md:px-8">
 
-    <!-- Status Badges Floating (Top Right) -->
     <div class="fixed top-4 right-4 flex flex-col gap-2 z-50">
         <div id="status-bt" class="bg-white/95 backdrop-blur border-2 border-amber-300 rounded-full px-4 py-1 text-xs font-bold shadow-sm flex items-center gap-2 text-amber-600">
             <i class="ph-bold ph-bluetooth"></i> bt offline
@@ -85,35 +81,19 @@
         </div>
     </div>
 
-    <!-- Header Section (Mascots & Cute Titles) -->
     <header class="py-8 text-center relative max-w-2xl mx-auto flex flex-col items-center select-none">
-        <!-- Floating Mascot Illustrations -->
-        <div class="flex items-center justify-center gap-4 md:gap-8 mb-4">
-            <!-- Left Character (Cute Blue Squirrel with umbrella) -->
-            <div class="text-4xl md:text-5xl floating">🐿️☂️</div>
-            
-            <!-- Main Title Logo (Styled after 'Duda Fan') -->
-            <div class="flex flex-col items-center">
-                <div class="bg-[#f97316] text-white text-3xl md:text-5xl font-black px-6 py-2.5 rounded-2xl shadow-md border-4 border-white tracking-wider transform -rotate-1 floating">
-                    <span class="text-yellow-300">Du</span>da <span class="text-green-300">Fan</span>
-                </div>
+        <div class="flex items-center justify-center mb-4">
+            <div class="flex flex-col items-center z-10">
+                <img src="https://github.com/zanasya/duda-fan/blob/0ff576e179efa28248ca5186d95c7131b0954ade/title?raw=true" 
+                     alt="Duda Fan" 
+                     class="h-32 md:h-48 lg:h-56 object-contain floating transform -rotate-1 drop-shadow-md">
             </div>
-
-            <!-- Right Character (Happy Chubby Yellow Beaver) -->
-            <div class="text-4xl md:text-5xl floating-delay">🐹✨</div>
-        </div>
-
-        <!-- Orange banner description -->
-        <div class="bg-[#f97316] text-white text-xs md:text-sm font-black px-6 py-1.5 rounded-full shadow-sm uppercase tracking-widest border-2 border-white">
-            Smart Fan in the Vent !
         </div>
     </header>
 
     <main class="container mx-auto max-w-4xl space-y-6">
 
-        <!-- Baris 1: Konfigurasi -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Firebase Config Card -->
             <div class="custom-card p-6 border-2 border-[#fcd34d]">
                 <div class="flex items-center gap-2 mb-4 text-[#f97316]">
                     <i class="ph-fill ph-cloud text-2xl animate-pulse"></i>
@@ -138,7 +118,6 @@
                 </div>
             </div>
 
-            <!-- Bluetooth Config Card -->
             <div class="custom-card p-6 border-2 border-[#fcd34d] flex flex-col justify-between">
                 <div>
                     <div class="flex items-center gap-2 mb-4 text-[#f97316]">
@@ -160,7 +139,6 @@
             </div>
         </div>
 
-        <!-- Baris 2: System Mode -->
         <div class="bg-[#d9f99d]/50 backdrop-blur rounded-[24px] p-4 border-2 border-[#a3e635] flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
             <div class="flex items-center gap-3 text-center sm:text-left">
                 <i class="ph-fill ph-gear text-[#eab308] text-3xl animate-spin [animation-duration:8s]"></i>
@@ -179,17 +157,12 @@
             </div>
         </div>
 
-        <!-- Section Title: Live Sensor Data -->
         <div class="text-center py-4 relative">
             <h2 class="text-2xl font-black text-[#eab308] uppercase tracking-widest border-b-4 border-yellow-200 inline-block px-8 pb-1">Live sensor data</h2>
         </div>
 
-        <!-- Baris 3: Sensor Data Layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <!-- Ultrasonik (Person) Card -->
             <div class="custom-card border-2 border-[#84cc16] p-6 flex flex-col justify-between relative overflow-hidden group">
-                <!-- Mascot branch hanging on the side -->
                 <div class="absolute top-0 left-0 w-2 h-full bg-[#3f6212] opacity-10"></div>
                 <div>
                     <h3 class="text-[#84cc16] font-black text-xl uppercase tracking-wider border-b-2 border-dashed border-[#ecfccb] pb-2 mb-4 flex justify-between items-center">
@@ -204,10 +177,8 @@
                                 <span class="text-sm ml-1 text-amber-700">CM</span>
                             </div>
                         </div>
-                        <!-- Profile Avatar placeholder from original layout -->
                         <div class="w-24 h-24 bg-sky-50 rounded-2xl border-2 border-dashed border-sky-200 flex items-center justify-center text-sky-400 text-5xl shadow-inner relative group-hover:scale-105 transition-transform duration-300">
                             <i class="ph-fill ph-user"></i>
-                            <div class="absolute -bottom-1 -right-1 text-base">🌿</div>
                         </div>
                     </div>
                 </div>
@@ -219,7 +190,6 @@
                 </div>
             </div>
 
-            <!-- Temperature Card -->
             <div class="custom-card border-2 border-[#84cc16] p-6 flex flex-col justify-between relative overflow-hidden group">
                 <div class="absolute top-0 left-0 w-2 h-full bg-[#3f6212] opacity-10"></div>
                 <div>
@@ -235,12 +205,8 @@
                                 <span class="text-sm ml-1 text-amber-700">°C</span>
                             </div>
                         </div>
-                        <!-- Round Clock/Gauge styled graphic -->
                         <div class="w-24 h-24 bg-amber-50 border-[6px] border-amber-200 rounded-full flex flex-col items-center justify-center text-amber-700 text-3xl shadow-md relative overflow-hidden">
-                            <div class="absolute w-1 h-10 bg-red-500 top-2 rounded-full origin-bottom transform rotate-12 transition-transform duration-500"></div>
-                            <!-- Small dial lines around the ring -->
-                            <div class="absolute inset-1 border border-amber-300/40 rounded-full border-dashed"></div>
-                            <i class="ph ph-clock text-amber-600/10 text-6xl"></i>
+                            <i class="ph ph-thermometer text-amber-600/10 text-6xl"></i>
                         </div>
                     </div>
                 </div>
@@ -251,48 +217,34 @@
                     <p class="text-xs text-amber-600/95 font-bold">Environmental real-time parameters monitoring channel.</p>
                 </div>
             </div>
-
         </div>
 
-        <!-- Baris 4: Relay Controller -->
         <div class="bg-white border-2 border-[#84cc16] rounded-[24px] p-8 max-w-md mx-auto shadow-sm relative overflow-hidden group">
-            <!-- Corner Flower mascot decor inside relay -->
-            <div class="absolute bottom-2 right-2 text-4xl floating-delay">🌸</div>
-            <div class="absolute top-2 left-2 text-2xl floating opacity-35">✨</div>
-
             <h3 class="text-[#84cc16] font-black text-xl text-center uppercase tracking-wider border-b-2 border-dashed border-[#ecfccb] pb-2 mb-4">
                 Relay Action Parameters
             </h3>
-
             <div class="flex flex-col items-center py-4">
-                <!-- Fan Rotating Icon matching the physical setup -->
                 <div id="card-relay" class="w-28 h-28 rounded-full bg-amber-50 border-4 border-amber-200 flex items-center justify-center text-amber-400 text-6xl mb-4 transition-all duration-300">
                     <i id="icon-relay" class="ph-bold ph-fan transition-all"></i>
                 </div>
-                
-                <!-- Status indicators -->
                 <div class="flex items-center gap-6 mb-6">
                     <span class="text-sm font-black text-gray-400" id="lbl-off-indicator">ON</span>
-                    <!-- Beautiful IOS Styled Toggle with matching orange color -->
                     <label class="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" id="sw-relay" class="sr-only peer" onchange="window.toggleRelay(this.checked)">
                         <div class="w-16 h-8 bg-amber-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-[#f97316]"></div>
                     </label>
                     <span class="text-sm font-black text-gray-400" id="lbl-on-indicator">OFF</span>
                 </div>
-
-                <div id="manual-relay-status" class="text-xs font-black text-amber-600/70 uppercase tracking-widest text-center" id="lbl-relay">
+                <div id="manual-relay-status" class="text-xs font-black text-amber-600/70 uppercase tracking-widest text-center">
                     Switch is locked under Automatic mode
                 </div>
             </div>
         </div>
 
-        <!-- Section Title: History Chart -->
         <div class="text-center py-4">
             <h2 class="text-2xl font-black text-[#eab308] uppercase tracking-widest border-b-4 border-yellow-200 inline-block px-8 pb-1">History Chart !</h2>
         </div>
 
-        <!-- Baris 5: Chart Area -->
         <div class="bg-white border-2 border-amber-200 rounded-[24px] p-6 shadow-sm">
             <div class="flex items-center gap-2 mb-4 text-[#f97316] font-black text-sm">
                 <i class="ph-bold ph-chart-line-up"></i> Live Parameter History Tracker
@@ -302,312 +254,241 @@
             </div>
         </div>
 
-        <!-- Baris 6: Terminal Logger (All lowercases) -->
-        <div class="bg-df-term-bg border-2 border-df-term-border rounded-[24px] p-4 shadow-sm">
-            <div class="flex items-center justify-between border-b border-amber-200 pb-3 mb-3">
+        <div class="bg-black rounded-[24px] p-4 shadow-sm">
+            <div class="flex items-center justify-between border-b border-gray-700 pb-3 mb-3">
                 <div class="flex items-center gap-1.5">
                     <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
                     <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
                     <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-                    <span class="ml-2 terminal-font text-xs text-amber-700 font-bold tracking-tight lowercase">system_terminal - duda_fan</span>
+                    <span class="ml-2 terminal-font text-xs text-gray-400 font-bold tracking-tight lowercase">system_terminal - duda_fan</span>
                 </div>
-                <button id="btnClearLog" class="text-xs font-bold text-[#f97316] hover:bg-orange-50 border border-orange-200 px-3 py-1 rounded-lg transition flex items-center gap-1">
+                <button id="btnClearLog" class="text-xs font-bold text-[#f97316] hover:bg-orange-900 border border-orange-800 px-3 py-1 rounded-lg transition flex items-center gap-1">
                     <i class="ph ph-trash"></i> clear
                 </button>
             </div>
-            <div id="terminalLog" class="terminal-font text-amber-900 bg-orange-50/20 rounded-xl h-40 p-4 text-xs overflow-y-auto space-y-1">
-                <div class="opacity-60 lowercase">system initialized. waiting for firebase or micro:bit configuration...</div>
+            <div id="terminalLog" class="terminal-font text-green-400 h-40 p-2 text-xs overflow-y-auto space-y-1">
             </div>
         </div>
-
     </main>
 
-    <!-- App Engine Business Logic Scripts -->
     <script type="module">
         import { initializeApp, getApps, deleteApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
         import { getDatabase, ref, onValue, update, set } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js';
 
-        const state = {
-            db: null, path: "", unsub: null, data: {},
-            device: null, txChar: null, rxChar: null,
-            bleConnected: false, bleBuffer: "",
-            modeOtomatis: 1,   // 1 = auto, 0 = manual
-            charts: {},
-            history: {
-                jarak:        { labels: [], data: [] },
-                jarak_manual: { labels: [], data: [] }
-            }
-        };
+        const SVC = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
+        const TX  = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
+        const RX  = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
 
+        const S = {
+            device: null, rxChar: null, bleBuffer: '',
+            mode: 'auto',
+            relay: false,
+            db: null, fbPath: '',
+            history: {
+                jarak: { labels: [], data: [] },
+                suhu:  { labels: [], data: [] }
+            },
+            charts: {}
+        };
         const MAX_PTS = 30;
         const $ = id => document.getElementById(id);
 
-        function log(msg, isError = false) {
+        function log(msg, color = '#4ade80') {
             const term = $('terminalLog');
-            const t = new Date().toLocaleTimeString('id-ID', { hour12: false });
-            const colorStyle = isError ? "color:#ef4444; font-weight:bold;" : "color:#78350f;";
-            term.insertAdjacentHTML('beforeend',
-                `<div class="opacity-90 py-0.5 lowercase" style="${colorStyle}">[${t}] &gt; ${msg}</div>`);
+            if(!term) return;
+            const line = document.createElement('div');
+            line.className  = 'opacity-90 py-0.5 lowercase';
+            line.style.color = color;
+            line.textContent = `[${new Date().toLocaleTimeString('id-ID', { hour12: false })}] > ${msg}`;
+            term.appendChild(line);
             term.scrollTop = term.scrollHeight;
         }
 
-        // BT & DB Status Indicators
-        function updateBTStatus() {
-            $('btn-connect-ble').disabled = state.bleConnected;
-            $('btn-disconnect-ble').disabled = !state.bleConnected;
-            const b = $('status-bt');
-            b.innerHTML = state.bleConnected ? '<i class="ph-bold ph-bluetooth"></i> bt online' : '<i class="ph-bold ph-bluetooth"></i> bt offline';
-            b.className = 'bg-white/90 backdrop-blur border-2 rounded-full px-4 py-1 text-xs font-bold shadow-sm flex items-center gap-2 ' + (state.bleConnected ? 'border-green-300 text-green-600 bg-green-50/50' : 'border-amber-200 text-amber-600');
-        }
-
-        function updateDBStatus(ok) {
-            const b = $('status-fb');
-            b.innerHTML = ok ? '<i class="ph-bold ph-cloud"></i> db synced' : '<i class="ph-bold ph-cloud"></i> db offline';
-            b.className = 'bg-white/90 backdrop-blur border-2 rounded-full px-4 py-1 text-xs font-bold shadow-sm flex items-center gap-2 ' + (ok ? 'border-green-300 text-green-600 bg-green-50/50' : 'border-amber-200 text-amber-600');
-        }
-
-        // BLE Framework Interface Configuration
-        const SVC = "6e400001-b5a3-f393-e0a9-e50e24dcca9e";
-        const TX  = "6e400002-b5a3-f393-e0a9-e50e24dcca9e";
-        const RX  = "6e400003-b5a3-f393-e0a9-e50e24dcca9e";
-
         async function connectBLE() {
             try {
-                if (!navigator.bluetooth) throw new Error("web bluetooth not supported on this browser.");
-                log("scanning micro:bit devices...");
-                state.device = await navigator.bluetooth.requestDevice({
-                    filters: [{ namePrefix: "BBC micro:bit" }],
+                log('searching for micro:bit...');
+                if (!navigator.bluetooth) throw new Error("web bluetooth not supported.");
+                S.device = await navigator.bluetooth.requestDevice({
+                    filters: [{ namePrefix: 'BBC micro:bit' }],
                     optionalServices: [SVC]
                 });
-                state.device.addEventListener("gattserverdisconnected", onDisconnected);
-                const server = await state.device.gatt.connect();
+                S.device.addEventListener('gattserverdisconnected', onBLEDisconnect);
+                const server  = await S.device.gatt.connect();
                 const service = await server.getPrimaryService(SVC);
-                state.txChar = await service.getCharacteristic(TX);
-                state.rxChar = await service.getCharacteristic(RX);
-                
-                await state.txChar.startNotifications();
-                state.txChar.addEventListener("characteristicvaluechanged", onBLEData);
-                state.bleConnected = true; 
-                updateBTStatus();
-                log("micro:bit connected successfully! ✅");
-            } catch (e) { log(`connection failed: ${e.message.toLowerCase()}`, true); }
-        }
-
-        function onDisconnected() {
-            state.bleConnected = false; 
-            updateBTStatus();
-            log("bluetooth connection channel offline.", true);
-        }
-
-        function onBLEData(event) {
-            let arr = [];
-            for (let i = 0; i < event.target.value.byteLength; i++)
-                arr.push(event.target.value.getUint8(i));
-            state.bleBuffer += String.fromCharCode.apply(null, arr);
-            const lines = state.bleBuffer.split('\n');
-            state.bleBuffer = lines.pop() || "";
-            lines.forEach(line => { const t = line.trim(); if (t) processIncomingLine(t); });
-        }
-
-        function processIncomingLine(txt) {
-            log(`rx data: ${txt}`);
-            if (!txt.includes(',')) return;
-
-            const idx = txt.indexOf(',');
-            const key = txt.substring(0, idx).trim();
-            const val = parseFloat(txt.substring(idx + 1).trim());
-            if (isNaN(val)) return;
-
-            if (key === "mode") {
-                applyMode(val === 1);
-                return;
-            }
-            if (key === "Relay") {
-                updateRelayUI(val === 1);
-                if (state.db) update(ref(state.db, `${state.path}/relay`), { value: val });
-                return;
-            }
-            if (key === "jarak") {
-                updateSensorUI("jarak", val); 
-                pushHistory("jarak", val);
-                if (state.db) update(ref(state.db, `${state.path}/jarak`), { value: val });
-                return;
-            }
-            if (key === "jarak_manual") {
-                updateSensorUI("jarak_manual", val); 
-                pushHistory("jarak_manual", val);
-                if (state.db) update(ref(state.db, `${state.path}/jarak_manual`), { value: val });
-                return;
+                S.rxChar      = await service.getCharacteristic(RX);
+                const txChar  = await service.getCharacteristic(TX);
+                await txChar.startNotifications();
+                txChar.addEventListener('characteristicvaluechanged', onBLEData);
+                setBLEStatus(true);
+                log(`connected: ${S.device.name}`);
+            } catch (e) {
+                log('error: ' + e.message);
             }
         }
 
-        async function sendBLE(key, val) {
-            if (!state.rxChar) return;
-            const payload = `${key},${val}\n`;
-            try {
-                await state.rxChar.writeValue(new TextEncoder().encode(payload));
-            } catch (e) { log(`tx routing block error: ${e.message.toLowerCase()}`, true); }
+        function onBLEDisconnect() {
+            setBLEStatus(false);
+            log('bluetooth disconnected.');
         }
 
-        // Realtime Data Sync UI Layout Updater
-        function updateSensorUI(key, val) {
-            const el = $(key === 'jarak_manual' ? 'val-jarak-manual' : 'val-jarak');
-            const bar = $(key === 'jarak_manual' ? 'bar-jarak-manual' : 'bar-jarak');
-            if (el) el.textContent = val;
-            if (bar) bar.style.width = Math.min(100, (val / 150) * 100) + '%';
-        }
-
-        function updateRelayUI(isOn) {
-            const sw = $('sw-relay');
-            const icon = $('icon-relay');
-            const card = $('card-relay');
-            const lblOff = $('lbl-off-indicator');
-            const lblOn = $('lbl-on-indicator');
-            
-            state.relay = isOn;
-            if (sw && document.activeElement !== sw) sw.checked = isOn;
-            
-            if (isOn) {
-                card.className = "w-28 h-28 rounded-full bg-[#f97316] text-white flex items-center justify-center text-6xl mb-4 shadow-xl animate-spin [animation-duration:2.5s]";
-                icon.className = "ph-fill ph-fan text-white";
-                lblOff.className = "text-sm font-black text-[#f97316]";
-                lblOn.className = "text-sm font-black text-gray-400";
-            } else {
-                card.className = "w-28 h-28 rounded-full bg-amber-50 border-4 border-amber-200 flex items-center justify-center text-amber-400 text-6xl mb-4 shadow-sm";
-                icon.className = "ph-fill ph-fan text-amber-400";
-                lblOff.className = "text-sm font-black text-gray-400";
-                lblOn.className = "text-sm font-black text-gray-400";
+        function setBLEStatus(ok) {
+            if($('btn-connect-ble')) $('btn-connect-ble').disabled = ok;
+            if($('btn-disconnect-ble')) $('btn-disconnect-ble').disabled = !ok;
+            const b = $('status-bt');
+            if(b) {
+                b.innerHTML = ok ? '<i class="ph-bold ph-bluetooth"></i> bt online' : '<i class="ph-bold ph-bluetooth"></i> bt offline';
+                b.className = 'bg-white/95 backdrop-blur border-2 rounded-full px-4 py-1 text-xs font-bold shadow-sm flex items-center gap-2 ' + (ok ? 'border-green-300 text-green-600 bg-green-50/50' : 'border-amber-200 text-amber-600');
             }
         }
 
-        // Active Mode Modifier Interface Handler
-        function applyMode(isAuto) {
-            state.modeOtomatis = isAuto ? 1 : 0;
+        function onBLEData(e) {
+            S.bleBuffer += new TextDecoder().decode(e.target.value);
+            const lines = S.bleBuffer.split('\n');
+            S.bleBuffer = lines.pop() ?? '';
+            lines.forEach(line => {
+                line = line.trim();
+                if (!line || !line.includes(':')) return;
+                const idx = line.indexOf(':');
+                const key = line.substring(0, idx).trim();
+                const val = line.substring(idx + 1).trim();
+                log(`rx ← ${key}:${val}`);
+                handleIncoming(key, val);
+            });
+        }
+
+        function handleIncoming(key, val) {
+            switch (key) {
+                case 'jarak':
+                    if($('val-jarak')) $('val-jarak').textContent = val;
+                    if($('bar-jarak')) $('bar-jarak').style.width = Math.min(parseFloat(val) || 0, 100) + '%';
+                    pushHistory('jarak', val);
+                    break;
+                case 'jarak_manual':
+                case 'suhu':
+                    if($('val-jarak-manual')) $('val-jarak-manual').textContent = val;
+                    if($('bar-jarak-manual')) $('bar-jarak-manual').style.width = Math.min(parseFloat(val) || 0, 100) + '%';
+                    pushHistory('suhu', val);
+                    break;
+                case 'Relay':
+                    applyRelayUI(val.trim() === '1');
+                    break;
+                case 'mode':
+                    applyModeUI(val.trim() === '1' ? 'auto' : 'manual');
+                    break;
+            }
+            if (S.db) update(ref(S.db, `${S.fbPath}/${key}`), { value: parseFloat(val) || 0 }).catch(() => {});
+        }
+
+        window.setMode = function(mode) {
+            sendBLE('mode', mode === 'auto' ? 1 : 0);
+            applyModeUI(mode);
+            if (S.db) update(ref(S.db, `${S.fbPath}/mode`), { value: mode === 'auto' ? 1 : 0 }).catch(() => {});
+        };
+
+        function applyModeUI(mode) {
+            S.mode = mode;
+            const isAuto = mode === 'auto';
             const pill = $('modePill');
             const btnTgl = $('btnToggleMode');
             const sw = $('sw-relay');
             const statusText = $('manual-relay-status');
-            
+
             if (isAuto) {
-                pill.className = "bg-[#84cc16] text-white font-black text-xs py-2 px-6 rounded-full shadow-sm flex items-center gap-1.5 transition";
-                pill.innerHTML = '<i class="ph-fill ph-robot"></i> Automatic';
-                btnTgl.textContent = 'Manual Mode';
-                sw.disabled = true;
-                statusText.textContent = "Switch is locked under Automatic mode";
+                if(pill) { pill.className = "bg-[#84cc16] text-white font-black text-xs py-2 px-6 rounded-full shadow-sm flex items-center gap-1.5 transition"; pill.innerHTML = '<i class="ph-fill ph-robot"></i> AUTOMATIC'; }
+                if(btnTgl) btnTgl.textContent = 'MANUAL MODE';
+                if(sw) sw.disabled = true;
+                if(statusText) statusText.textContent = "SWITCH IS LOCKED UNDER AUTOMATIC MODE";
             } else {
-                pill.className = "bg-df-yellow text-white font-black text-xs py-2 px-6 rounded-full shadow-sm flex items-center gap-1.5 transition";
-                pill.innerHTML = '<i class="ph-fill ph-hand-palm"></i> Manual';
-                btnTgl.textContent = 'Automatic Mode';
-                sw.disabled = false;
-                statusText.textContent = "Use switch to control Relay manually";
+                if(pill) { pill.className = "bg-[#eab308] text-white font-black text-xs py-2 px-6 rounded-full shadow-sm flex items-center gap-1.5 transition"; pill.innerHTML = '<i class="ph-fill ph-hand-palm"></i> MANUAL'; }
+                if(btnTgl) btnTgl.textContent = 'AUTOMATIC MODE';
+                if(sw) sw.disabled = false;
+                if(statusText) statusText.textContent = "USE SWITCH TO CONTROL RELAY MANUALLY";
             }
-            sendBLE("mode", isAuto ? 1 : 0);
-            if (state.db) update(ref(state.db, `${state.path}/mode`), { value: isAuto ? 1 : 0 });
-            log(`system mode set to: ${isAuto ? 'automatic' : 'manual'}`);
-            updateRelayUI(state.relay);
         }
 
-        window.toggleRelay = (isChecked) => {
-            if (state.modeOtomatis === 1) return;
-            const val = isChecked ? 1 : 0;
-            updateRelayUI(isChecked);
-            sendBLE("Relay", val);
-            if (state.db) update(ref(state.db, `${state.path}/relay`), { value: val });
-            log(`manual relay command triggered: ${isChecked ? 'on' : 'off'}`);
+        window.toggleRelay = function(isChecked) {
+            if (S.mode === 'auto') {
+                const sw = $('sw-relay');
+                if (sw) sw.checked = S.relay;
+                return;
+            }
+            const next = typeof isChecked === 'boolean' ? isChecked : !S.relay;
+            sendBLE('Relay', next ? 1 : 0);
+            applyRelayUI(next);
+            if (S.db) update(ref(S.db, `${S.fbPath}/Relay`), { value: next ? 1 : 0 }).catch(() => {});
         };
 
-        // Cloud synchronization module
-        async function connectFirebase() {
-            const apiKey = $('fb-apiKey').value.trim();
-            const dbUrl  = $('fb-dbUrl').value.trim();
-            const path   = $('fb-path').value.trim() || "smarthome/ruangan1";
-            if (!apiKey || !dbUrl) { alert("Isi API Key dan Database URL!"); return; }
-
-            try {
-                const apps = getApps();
-                if (apps.length > 0) await deleteApp(apps[0]);
-                if (state.unsub) state.unsub();
-
-                const app = initializeApp({ apiKey, databaseURL: dbUrl, projectId: dbUrl.replace("https://","").split(".")[0] });
-                state.db = getDatabase(app);
-                state.path = path;
-                log(`connecting target node path: /${path}`);
-
-                const initData = {
-                    jarak: { tipe: 'sensor', value: 0, satuan: 'cm' },
-                    jarak_manual: { tipe: 'sensor', value: 0, satuan: 'cm' },
-                    relay: { tipe: 'switch', value: 0 },
-                    mode: { tipe: 'switch', value: 1 }
-                };
-
-                state.unsub = onValue(ref(state.db, path), (snap) => {
-                    const d = snap.val();
-                    if (!d) { set(ref(state.db, path), initData); return; }
-                    state.data = d;
-                    updateDBStatus(true);
-
-                    if (d.jarak) updateSensorUI("jarak", d.jarak.value ?? 0);
-                    if (d.jarak_manual) updateSensorUI("jarak_manual", d.jarak_manual.value ?? 0);
-                    if (d.relay) updateRelayUI((d.relay.value ?? 0) === 1);
-                    if (d.mode) applyMode((d.mode.value ?? 1) === 1);
-                }, err => { log(`database sync exception: ${err.message.toLowerCase()}`, true); updateDBStatus(false); });
-
-                log(`firebase synchronized! ☁️`);
-                localStorage.setItem('dudafan_cfg', JSON.stringify({ apiKey, dbUrl, path }));
-            } catch (e) { log(`firebase init exception: ${e.message.toLowerCase()}`, true); updateDBStatus(false); }
+        function applyRelayUI(isOn) {
+            S.relay = isOn;
+            const sw = $('sw-relay');
+            const icon = $('icon-relay');
+            const card = $('card-relay');
+            if (sw && document.activeElement !== sw) sw.checked = isOn;
+            if (isOn) {
+                if(card) card.className = "w-28 h-28 rounded-full bg-[#f97316] text-white flex items-center justify-center text-6xl mb-4 shadow-xl animate-spin [animation-duration:2.5s]";
+                if(icon) icon.className = "ph-fill ph-fan text-white";
+            } else {
+                if(card) card.className = "w-28 h-28 rounded-full bg-amber-50 border-4 border-amber-200 flex items-center justify-center text-amber-400 text-6xl mb-4 shadow-sm";
+                if(icon) icon.className = "ph-fill ph-fan text-amber-400";
+            }
         }
 
-        // Chart Visualizations
+        async function sendBLE(key, val) {
+            if (!S.rxChar) return;
+            try { await S.rxChar.writeValue(new TextEncoder().encode(`${key},${val}\n`)); } catch(e) {}
+        }
+
         function initCharts() {
             const ctx = $('chart-jarak-big').getContext('2d');
-            state.charts['chart-big'] = new Chart(ctx, {
+            S.charts['chart-big'] = new Chart(ctx, {
                 type: 'line',
-                data: {
-                    labels: state.history.jarak.labels,
-                    datasets: [
-                        { label: 'Distance Person (CM)', data: state.history.jarak.data, borderColor: '#84cc16', backgroundColor: 'rgba(132,204,22,0.1)', fill: true, tension: 0.4 },
-                        { label: 'Environment Ref (CM)', data: state.history.jarak_manual.data, borderColor: '#f97316', backgroundColor: 'rgba(249,115,22,0.1)', fill: true, tension: 0.4 }
-                    ]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: true, labels: { font: { family: 'Balsamiq Sans', weight: 'bold' } } } },
-                    scales: { y: { grid: { color: '#f3f4f6' } }, x: { display: false } }
-                }
+                data: { labels: S.history.jarak.labels, datasets: [
+                    { label: 'Distance Person (CM)', data: S.history.jarak.data, borderColor: '#84cc16', tension: 0.4 },
+                    { label: 'Environment Ref (CM)', data: S.history.suhu.data, borderColor: '#f97316', tension: 0.4 }
+                ]},
+                options: { responsive: true, maintainAspectRatio: false }
             });
         }
 
         function pushHistory(key, val) {
-            let histKey = (key === 'jarak') ? 'jarak' : (key === 'jarak_manual') ? 'jarak_manual' : null;
-            if (!histKey) return;
-            const h = state.history[histKey];
-            h.labels.push(new Date().toLocaleTimeString('id-ID', { hour12: false }));
+            const h = S.history[key];
+            h.labels.push(new Date().toLocaleTimeString());
             h.data.push(parseFloat(val) || 0);
             if (h.labels.length > MAX_PTS) { h.labels.shift(); h.data.shift(); }
-
-            const ch = state.charts['chart-big'];
-            if (ch) {
-                ch.data.labels = state.history.jarak.labels;
-                ch.update('none');
-            }
+            if (S.charts['chart-big']) { S.charts['chart-big'].update('none'); }
         }
 
-        // Binding to HTML Element events
+        async function connectFirebase() {
+            const apiKey = $('fb-apiKey').value.trim();
+            const dbUrl  = $('fb-dbUrl').value.trim();
+            const path   = $('fb-path').value.trim() || "smarthome/ruangan1";
+            try {
+                const apps = getApps();
+                if (apps.length) await deleteApp(apps[0]);
+                const app = initializeApp({ apiKey, databaseURL: dbUrl });
+                S.db = getDatabase(app);
+                S.fbPath = path;
+                log('firebase connected.');
+                onValue(ref(S.db, path), snap => {
+                    const d = snap.val();
+                    if (!d) return;
+                    ['suhu','jarak','jarak_manual','Relay','mode'].forEach(k => {
+                        if (d[k] !== undefined) handleIncoming(k, String(d[k].value ?? d[k]));
+                    });
+                });
+            } catch (e) { log('firebase error: ' + e.message); }
+        }
+
         $('btn-connect-ble').onclick = connectBLE;
-        $('btn-disconnect-ble').onclick = () => { if (state.device) state.device.gatt.disconnect(); };
+        $('btn-disconnect-ble').onclick = () => { if (S.device) S.device.gatt.disconnect(); };
         $('btn-connect-fb').onclick = connectFirebase;
-        $('btnToggleMode').onclick = () => applyMode(state.modeOtomatis === 0);
-        $('btnClearLog').onclick = () => $('terminalLog').innerHTML = '';
+        $('btnToggleMode').onclick = () => window.setMode(S.mode === 'auto' ? 'manual' : 'auto');
+        $('btnClearLog').onclick = () => { $('terminalLog').innerHTML = ''; };
 
         window.onload = () => {
             initCharts();
-            applyMode(true);
-            const saved = JSON.parse(localStorage.getItem('dudafan_cfg') || '{}');
-            if (saved.apiKey) {
-                $('fb-apiKey').value = saved.apiKey;
-                $('fb-dbUrl').value  = saved.dbUrl;
-                $('fb-path').value   = saved.path || "smarthome/ruangan1";
-            }
+            applyModeUI('auto');
+            log('system ready.');
         };
     </script>
 </body>
